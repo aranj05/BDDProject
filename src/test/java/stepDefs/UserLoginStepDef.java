@@ -20,10 +20,10 @@ public class UserLoginStepDef {
 		 
 	}
 	@When("User enter credentials")
-	public void user_enter_credentials() {
+	public void user_enter_credentials(String strUser, String StrPwd) {
 		driver.get("https://the-internet.herokuapp.com/login");
-		driver.findElement(By.id("username")).sendKeys("tomsmith");
-		driver.findElement(By.name("password")).sendKeys("SuperSecretPassword!");
+		driver.findElement(By.id("username")).sendKeys(strUser);
+		driver.findElement(By.name("password")).sendKeys(StrPwd);
 		driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']")).click();
 	}
 	@Then("Should display Success Msg")
