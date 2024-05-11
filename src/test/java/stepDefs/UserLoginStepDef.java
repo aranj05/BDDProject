@@ -1,6 +1,8 @@
 package stepDefs;
 
 import java.util.List;
+import java.util.Map;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,12 +40,24 @@ public class UserLoginStepDef {
 		driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']")).click();
 	}  */
 	
-	@When("User enter credentials")     // Fourth way__passing data at step level
+	/*@When("User enter credentials")     // Fourth way__passing data at step level "Use DataTable as List"
 	public void user_enter_credentials(DataTable dataTable) {
 		List<List<String>> users= dataTable.asLists();
 		driver.get("https://the-internet.herokuapp.com/login");
 		String strUser= users.get(0).get(0);
 		String StrPwd= users.get(0).get(1);
+		driver.findElement(By.id("username")).sendKeys(strUser);
+		driver.findElement(By.name("password")).sendKeys(StrPwd);
+		driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']")).click();
+	}  */
+	
+	
+	@When("User enter credentials")   // Fifth way__pass data at step level as key value pare "Use DataTable as map"
+	public void user_enter_credentials(DataTable dataTable) {
+		List<Map<String, String>> users= dataTable.asMaps();
+		driver.get("https://the-internet.herokuapp.com/login");
+		String strUser= users.get(0).get("username");
+		String StrPwd= users.get(0).get("password");
 		driver.findElement(By.id("username")).sendKeys(strUser);
 		driver.findElement(By.name("password")).sendKeys(StrPwd);
 		driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']")).click();

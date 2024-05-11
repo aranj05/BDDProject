@@ -22,9 +22,17 @@ Feature: User Login Function
 #| testUser1 | Welcome123 |
 
 
-Scenario Outline: valid Login - Fourth way__passing data at step level
+#Scenario Outline: valid Login - Fourth way__passing data at step level
+#Given User is on Login page
+#When User enter credentials
+#		| tomsmith | SuperSecretPassword! |
+#Then Should display Success Msg
+
+
+Scenario Outline: valid Login - Fifth way__passing data at step level as Key value pare
 Given User is on Login page
 When User enter credentials
+		| username | password |
 		| tomsmith | SuperSecretPassword! |
 Then Should display Success Msg
 
