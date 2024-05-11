@@ -1,5 +1,8 @@
+@PhaseTwo   #feature level tagging
+
 Feature: Tasks Managment
 
+@SmokeTest
 Scenario: Create a new Tasks
 Given User is logged in
 When User created new Tasks
