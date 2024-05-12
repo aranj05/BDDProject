@@ -13,8 +13,8 @@ import io.cucumber.testng.CucumberOptions;
 		//tags="@RegressionTest and @SmokeTest"    //Executed TCs should have both tags
 		//tags="@RegressionTest or @SmokeTest"		//Executed TCs should have any of the given tags
 		//tags= "@PhaseTwo and @SmokeTest"							//Feature Level tag
-		tags= "@PhaseTwo and not @SmokeTest"       //Execute TC for PhaseOne other than somkeTest tags
-		
+		//tags= "@PhaseTwo and not @SmokeTest"       //Execute TC for PhaseOne other than somkeTest tags
+		tags= "@PhaseTwo and @SmokeTest or @RegressionTest " 
 		)
 
 public class TaggedRunner extends AbstractTestNGCucumberTests {

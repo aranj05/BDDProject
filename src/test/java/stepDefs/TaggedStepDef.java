@@ -1,10 +1,34 @@
 package stepDefs;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class TaggedStepDef {
 
+	@BeforeAll                   //methods should be static
+	public static void setup() {
+		System.out.println("Execute once, Before executing All the scenarios...");
+	}
+	
+	@Before
+	public void setupScenario() {
+		System.out.println("Execute Before execution of each scenarios..");
+	}
+	
+	@AfterAll                   //methods should be static
+	public static void exitAll() {
+		System.out.println("Execute once, After All the scenarios got executed...");
+	}
+	
+	@After
+	public void exitEach() {
+		System.out.println("Execute After execution of each scenarios..");
+	}
+	
 	//Contact 
 	@Given("User is logged in")
 	public void user_is_logged_in() {

@@ -9,12 +9,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class GooglePageStepDef {
+	
+	@Before  ("@SmokeTest")
+	public void setupChrome() {
+		System.out.println("initialize Chrome..");
+	}
+	
+	@Before   ("@RegressionTest")
+	public void setupEdge() {
+		System.out.println("initialize Edge..");
+	}
 	
 	WebDriver driver;
 	

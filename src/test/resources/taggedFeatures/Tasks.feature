@@ -6,7 +6,8 @@ Feature: Tasks Managment
 Scenario: Create a new Tasks
 Given User is logged in
 When User created new Tasks
- 
+
+@RegressionTest 
 Scenario: view Tasks
 Given User is logged in
 When User view Tasks details

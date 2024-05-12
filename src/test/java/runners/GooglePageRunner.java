@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-		features= "src//test//resources//features//UserLogin.feature",        //to run the feature files
+		features= "src//test//resources//features//GooglePage.feature",        //to run the feature files
 		//features= "@target/FailedScenarios.txt",       //to run only failed scenario 
 		glue= {"stepDefs"},
 		dryRun= false,
@@ -17,7 +17,8 @@ import io.cucumber.testng.CucumberOptions;
 				//"usage:target/reports/UsageReport",
 				//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				//"rerun:target/FailedScenarios.txt",
-		}
+		},
+		tags= "@SmokeTest or @RegressionTest"
 		)
 
 public class GooglePageRunner extends AbstractTestNGCucumberTests {
